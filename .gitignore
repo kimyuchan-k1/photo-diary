@@ -23,3 +23,10 @@ yarn-debug.log*
 yarn-error.log*
 
 venv
+.idea
+photodiary.db
+*.pyc
+__pycache__
+migrations
+
+flask_session/
