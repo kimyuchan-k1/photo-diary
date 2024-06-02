@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import PhotoList from './PhotoList';
-import { Button } from 'react-bootstrap';
+import { Button, Container, Row, Col, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Home = ({ isLoggedIn }) => {
+
+  const users = ['User1', 'User2', 'User3', 'User4']
 
   return (
     <div>
@@ -19,7 +21,20 @@ const Home = ({ isLoggedIn }) => {
           </Link>
         </div>
       ) : (
-        <p>로그인 하세요.</p>
+        <div>
+          <Container fluid>
+        <Row>
+          <Col md={5} className="bg-light p-3">
+            <h4>User List</h4>
+            <ListGroup>
+              {users.map((user,index) => (
+                <ListGroup.Item key={index}>{user}</ListGroup.Item>
+              ))}
+            </ListGroup>
+          </Col>
+        </Row>
+      </Container>
+        </div>
       )}
     </div>
   );
