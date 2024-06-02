@@ -4,21 +4,34 @@ from flask_session import Session
 from flask_cors import CORS
 from config import Config
 from models import db
-from views import auth, messages,photos,users
+import auth, messages, photos, users
 import os
+
+
+# Ensure the upload folder exists
+if not os.path.exists("uploads"):
+    os.makedirs("uploads")
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# CORS 설정 추가
-CORS(app, supports_credentials=True)
+CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
+
+
+# 세션 설정 추가
+app.config["SESSION_TYPE"] = "filesystem"
+# app.config["SECRET_KEY"] = "dongguk"
+app.secret_key = "donggukhtfffhf"
+
+
+# config  추가
+
+app.config["SESSION_COOKIE_SAMESITE"] = "None"
+app.config["SESSION_COOKIE_SECURE"] = True
 
 db.init_app(app)
 Session(app)
-
-# Ensure the upload folder exists
-if not os.path.exists('uploads'):
-    os.makedirs('uploads')
 
 app.register_blueprint(auth.bp)
 app.register_blueprint(photos.bp)
@@ -29,5 +42,6 @@ app.register_blueprint(messages.bp)
 with app.app_context():
     db.create_all()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     app.run(debug=True)

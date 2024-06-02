@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea,
+button {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.user-list,
+.message-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-list li,
+.message-list li {
+  margin-bottom: 10px;
+}
+
+.user-list a,
+.message-list button {
+  text-decoration: none;
+  color: #000;
+}
+
+.user-list a:hover,
+.message-list button:hover {
+  text-decoration: underline;
+}
