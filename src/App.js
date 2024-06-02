@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import axios from 'axios';
 import Mypage from './pages/Mypage';
+import Writepost from './pages/Writepost';
 
 // Axios 기본 URL 설정
 axios.defaults.baseURL = 'http://127.0.0.1:5000';
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="/search" element={<SearchPhotos />} />
           <Route path="/photos" element={<PhotoList />} />
           <Route path="/Mypage" element={<Mypage />} />
+          <Route path="/write" element={<Writepost />} />
         </Routes>
       </div>
     </Router>
