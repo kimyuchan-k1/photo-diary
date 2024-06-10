@@ -9,10 +9,15 @@ import Register from './pages/Register';
 import axios from 'axios';
 import Mypage from './pages/Mypage';
 import Writepost from './pages/Writepost';
+import UserList from './pages/UserList';
+// import SendMessage from './pages/SendMessage';
+// import ReceivedMessages from './pages/ReceivedMessages';
+// import SentMessages from './pages/SentMessages';
 
 // Axios 기본 URL 설정
 axios.defaults.baseURL = 'http://127.0.0.1:5000';
 axios.defaults.withCredentials = true;
+
 const App = () => {
   const [isLoggedIn, setisLoggedIn] = useState(false);
 
@@ -45,6 +50,10 @@ const App = () => {
           <Route path="/photos" element={<PhotoList />} />
           <Route path="/Mypage" element={<Mypage />} />
           <Route path="/write" element={<Writepost />} />
+          <Route path="/users" element={<UserList />} />
+          {/* <Route path="/send-message" element={<SendMessage />} />
+          <Route path="/received-messages" element={<ReceivedMessages />} />
+          <Route path="/sent-messages" element={<SentMessages />} /> */}
         </Routes>
       </div>
     </Router>

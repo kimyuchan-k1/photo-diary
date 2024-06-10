@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Form, ListGroup } from 'react-bootstrap';
@@ -33,6 +34,8 @@ const MyPage = () => {
 
   const handleEdit = (post) => {
     setEditPost(post);
+
+
   };
 
   const handleUpdate = async (e) => {
@@ -52,17 +55,21 @@ const MyPage = () => {
       setEditPost(null);
     } catch (error) {
       console.error('Error updating post:', error);
+
     }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setEditPost({ ...editPost, [name]: value });
+
   };
 
   return (
     <div>
       <h1>My Page</h1>
+
       <ListGroup>
         {posts.map((post) => (
           <ListGroup.Item key={post.id}>
@@ -97,9 +104,11 @@ const MyPage = () => {
           <Button type="submit">Update</Button>
           <Button onClick={() => setEditPost(null)}>Cancel</Button>
         </Form>
+
       )}
     </div>
   );
 };
 
 export default MyPage;
+

@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_session import Session
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from config import Config
 from models import db
 import auth, messages, photos, users
@@ -16,8 +16,8 @@ if not os.path.exists("uploads"):
 app = Flask(__name__)
 app.config.from_object(Config)
 
-CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
 
+CORS(app, supports_credentials=True)
 
 # 세션 설정 추가
 app.config["SESSION_TYPE"] = "filesystem"
@@ -30,8 +30,10 @@ app.secret_key = "donggukhtfffhf"
 app.config["SESSION_COOKIE_SAMESITE"] = "None"
 app.config["SESSION_COOKIE_SECURE"] = True
 
+
 db.init_app(app)
 Session(app)
+
 
 app.register_blueprint(auth.bp)
 app.register_blueprint(photos.bp)

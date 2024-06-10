@@ -14,16 +14,24 @@ const Home = ({ isLoggedIn }) => {
           <PhotoList />
           <Link to="/write">
             <Button
+
               variant="dark" // 버튼 색상을 검은색으로 설정
               className="position-fixed"
               style={{ bottom: '20px', right: '20px', color: 'white' }} // 글씨색을 흰색으로 설정
+
+           
             >
               글쓰기
             </Button>
           </Link>
-        </>
+
+
+          <UserList />
+        </div>
       ) : (
-        <UserList />
+        <div>
+          <UserList />
+        </div>
       )}
     </Container>
   );

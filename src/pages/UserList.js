@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
 import { ListGroup } from 'react-bootstrap';
+
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -23,13 +25,16 @@ const UserList = () => {
   return (
     <div>
       <h1>User List</h1>
+
       <ListGroup>
         {users.map((user) => (
           <ListGroup.Item key={user.id}>{user.username}</ListGroup.Item>
         ))}
       </ListGroup>
+
     </div>
   );
 };
 
 export default UserList;
+

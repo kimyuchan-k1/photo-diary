@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
+
 const SearchPhotos = () => {
   const [photos, setPhotos] = useState([]);
   const [error, setError] = useState('');
@@ -49,6 +50,7 @@ const SearchPhotos = () => {
         ))}
       </Row>
     </Container>
+
   );
 };
 
