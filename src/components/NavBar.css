@@ -1,0 +1,12 @@
+.navbar-brand,
+.nav-link {
+  color: white !important; /* 글자 색상을 흰색으로 설정 */
+  font-family: 'Roboto', sans-serif; /* 원하는 글꼴로 설정 */
+  font-weight: normal; /* 기본 글자 굵기 설정 */
+  transition: font-weight 0.2s; /* 글자 굵기 전환을 위한 트랜지션 설정 */
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+  font-weight: bold; /* 커서를 올렸을 때 글자 두껍게 설정 */
+}
