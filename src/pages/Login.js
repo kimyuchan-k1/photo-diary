@@ -18,7 +18,7 @@ const Login = ({ setisLoggedIn }) => {
       );
       if (response.status === 200) {
         setisLoggedIn(true);
-        navigate('/main');
+        navigate('/');
       }
     } catch (error) {
       setError('Invalid username or password');

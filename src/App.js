@@ -10,9 +10,7 @@ import axios from 'axios';
 import Mypage from './pages/Mypage';
 import Writepost from './pages/Writepost';
 import UserList from './pages/UserList';
-// import SendMessage from './pages/SendMessage';
-// import ReceivedMessages from './pages/ReceivedMessages';
-// import SentMessages from './pages/SentMessages';
+// import MessageModal from './components/MessageModal';
 
 // Axios 기본 URL 설정
 axios.defaults.baseURL = 'http://127.0.0.1:5000';
@@ -51,9 +49,7 @@ const App = () => {
           <Route path="/Mypage" element={<Mypage />} />
           <Route path="/write" element={<Writepost />} />
           <Route path="/users" element={<UserList />} />
-          {/* <Route path="/send-message" element={<SendMessage />} />
-          <Route path="/received-messages" element={<ReceivedMessages />} />
-          <Route path="/sent-messages" element={<SentMessages />} /> */}
+          {/* <Route path="/Message" element={<MessageModal />} /> */}
         </Routes>
       </div>
     </Router>

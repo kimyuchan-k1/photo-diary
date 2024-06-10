@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import {
-  Form,
-  Button,
-  FormControl,
-  Container,
-  Row,
-  Col,
-  ListGroup,
-} from 'react-bootstrap';
+import { Form, Button, FormControl } from 'react-bootstrap';
 
 const NavBar = ({ isLoggedIn, setisLoggedIn }) => {
   const navigate = useNavigate();
@@ -95,15 +87,7 @@ const NavBar = ({ isLoggedIn, setisLoggedIn }) => {
                   마이페이지
                 </Link>
               </li>
-              {/* <li>
-                <Link to="/send-message">Send Message</Link>
-              </li>
-              <li>
-                <Link to="/received-messages">Received Messages</Link>
-              </li>
-              <li>
-                <Link to="/sent-messages">Sent Messages</Link>
-              </li> */}
+
               <li className="nav-item">
                 <button
                   className="btn btn-outline-danger"

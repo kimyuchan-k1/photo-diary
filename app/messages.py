@@ -19,8 +19,6 @@ def send_message():
     db.session.add(message)
     db.session.commit()
 
-    return jsonify({"message": "Message sent successfully!"}), 201
-
 
 @bp.route("/received", methods=["GET"])
 def received_messages():
@@ -32,24 +30,6 @@ def received_messages():
         {
             "id": message.id,
             "sender_id": message.sender_id,
-            "content": message.content,
-            "timestamp": message.timestamp,
-        }
-        for message in messages
-    ]
-    return jsonify(message_list), 200
-
-
-@bp.route("/sent", methods=["GET"])
-def sent_messages():
-    if "user_id" not in session:
-        return jsonify({"message": "Unauthorized"}), 401
-    user_id = session["user_id"]
-    messages = Message.query.filter_by(sender_id=user_id).all()
-    message_list = [
-        {
-            "id": message.id,
-            "recipient_id": message.recipient_id,
             "content": message.content,
             "timestamp": message.timestamp,
         }
