@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Form, Button, Container, Alert } from 'react-bootstrap';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -24,25 +25,33 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleRegister}>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username"
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <button type="submit">Register</button>
-      </form>
-    </div>
+    <Container className="mt-5" style={{ maxWidth: '400px' }}>
+      <h1 className="mb-4">회원가입</h1>
+      {error && <Alert variant="danger">{error}</Alert>}
+      <Form onSubmit={handleRegister}>
+        <Form.Group controlId="formUsername" className="mb-3">
+          <Form.Label>ID</Form.Label>
+          <Form.Control
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Enter username"
+          />
+        </Form.Group>
+        <Form.Group controlId="formPassword" className="mb-3">
+          <Form.Label>비밀번호</Form.Label>
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter password"
+          />
+        </Form.Group>
+        <Button variant="dark" type="submit" className="w-100" style={{color: "white"}}>
+          회원가입
+        </Button>
+      </Form>
+    </Container>
   );
 };
 

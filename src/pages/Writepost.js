@@ -88,9 +88,9 @@ function Writepost() {
             <img src={preview} alt="미리보기" style={{ maxWidth: '100%' }} />
           </div>
         )}
-          <Button variant="primary" type="submit" className="w-100 mt-3">
+          <Button variant="dark" type="submit" className="w-100 mt-3" style={{color: "white"}}>
            게시하기
-            </Button>
+          </Button>
       </Form>
     </Container>
   );

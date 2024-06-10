@@ -29,6 +29,7 @@ const PhotoList = () => {
                 src={photo.image_url}
                 className="card-img-top"
                 alt={photo.description}
+                style={{ maxHeight: '300px' }} // 이미지의 최대 높이 설정
               />
               <div className="card-body">
                 <h5 className="card-title">{photo.description}</h5>
