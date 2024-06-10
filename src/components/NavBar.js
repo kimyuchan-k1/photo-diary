@@ -35,17 +35,9 @@ const NavBar = ({ isLoggedIn, setisLoggedIn }) => {
     setSearchKeyword(e.target.value);
   };
 
-  const handleSearch = async (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post(
-        '/search',
-        { keyword: searchKeyword },
-        { withCredentials: true }
-      );
-    } catch (error) {
-      console.error('Error searching keyword:', error);
-    }
+    navigate(`/search?keyword=${searchKeyword}`);
   };
 
   return (
@@ -103,6 +95,15 @@ const NavBar = ({ isLoggedIn, setisLoggedIn }) => {
                   마이페이지
                 </Link>
               </li>
+              {/* <li>
+                <Link to="/send-message">Send Message</Link>
+              </li>
+              <li>
+                <Link to="/received-messages">Received Messages</Link>
+              </li>
+              <li>
+                <Link to="/sent-messages">Sent Messages</Link>
+              </li> */}
               <li className="nav-item">
                 <button
                   className="btn btn-outline-danger"
