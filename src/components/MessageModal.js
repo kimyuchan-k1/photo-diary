@@ -50,7 +50,7 @@ const MessageModal = ({ recipientId, onClose, onSuccess }) => {
                 />
               </div>
               <button type="submit" className="btn btn-primary">
-                Send
+                전송
               </button>
             </form>
           </div>

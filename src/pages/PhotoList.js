@@ -22,6 +22,7 @@ const PhotoList = () => {
 
   const handleMessage = (recipientId) => {
     setMessageRecipient(recipientId);
+    console.log(recipientId);
   };
 
   const handleModalClose = () => {
@@ -35,15 +36,16 @@ const PhotoList = () => {
 
   return (
     <div className="container mt-5">
-      <h1 className="mb-4">Photo List</h1>
+      <h1 className="mb-4">게시물</h1>
       <div className="row">
         {photos.map((photo) => (
           <div className="col-md-4 mb-4" key={photo.id}>
             <div className="card h-100">
               <img
-                src={photo.image_url}
+                src={`http://localhost:5000/${photo.image_url}`}
                 className="card-img-top"
                 alt={photo.description}
+                style={{ maxHeight: '300px' }} // 이미지의 최대 높이 설정
               />
               <div className="card-body">
                 <h5 className="card-title">{photo.description}</h5>

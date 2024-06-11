@@ -108,6 +108,7 @@ def get_photos():
     photos = Photo.query.all()
     result = [
         {
+            "user_id": photo.user_id,
             "id": photo.id,
             "image_url": photo.image_url,
             "description": photo.description,
@@ -128,6 +129,7 @@ def my_photos():
     photos = Photo.query.filter_by(user_id=user_id).all()
     photo_list = [
         {
+            "user_id": photo.user_id,
             "id": photo.id,
             "image_url": photo.image_url,
             "description": photo.description,
