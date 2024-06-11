@@ -36,7 +36,7 @@ const SearchPhotos = () => {
           <Col md={4} key={photo.id} className="mb-4">
             <div className="card h-100">
               <img
-                src={`http://127.0.0.1:5000/uploads/${photo.image_url}`}
+                src={`http://localhost:5000/${photo.image_url}`}
                 className="card-img-top"
                 alt={photo.description}
               />
